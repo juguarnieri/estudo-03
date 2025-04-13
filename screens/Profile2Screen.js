@@ -2,11 +2,9 @@ import React from 'react';
 import {
   View,
   Text,
-  ScrollView,
   StyleSheet,
   SafeAreaView,
-  TouchableOpacity,
-  Image,
+  ScrollView,
 } from 'react-native';
 
 import CardFavorite from "../components/CardFavorite";
@@ -20,34 +18,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function ProfileScreen() {
-  const favoritos = Array.from({ length: 12 }).map((_, i) => ({
-    id: i + 1,
-    title: `F${i + 1}`,
-    image: require('../assets/image.png'),
-  }));
-
-  const destaques = [
-    { id: 1, texto: 'Texto 1', imagem: require('../assets/image.png') },
-    { id: 2, texto: 'Texto 2', imagem: require('../assets/image.png') },
-    { id: 3, texto: 'Texto 3', imagem: require('../assets/image.png') },
-    { id: 4, texto: 'Texto 4', imagem: require('../assets/image.png') },
-  ];
-
-  const atalhos = [
-    { icon: '⚡', label: 'Ação 1' },
-    { icon: '📥', label: 'Ação 2' },
-    { icon: '🔒', label: 'Ação 3' },
-    { icon: '💬', label: 'Ação 4' },
-    { icon: '🛠️', label: 'Ação 5' },
-    { icon: '📊', label: 'Ação 6' },
-    { icon: '🎯', label: 'Ação 7' },
-    { icon: '📍', label: 'Ação 8' },
-    { icon: '📝', label: 'Ação 9' },
-    { icon: '📁', label: 'Ação 10' },
-    { icon: '🔔', label: 'Ação 11' },
-    { icon: '💡', label: 'Ação 12' },
-  ];
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Header title="Perfil" />
@@ -56,70 +26,83 @@ export default function ProfileScreen() {
         {/* Favoritos */}
         <Text style={styles.sectionTitle}>Favoritos</Text>
         <View style={styles.favGrid}>
-          {favoritos.map((fav) => (
-            <CardFavorite key={fav.id} title={fav.title} image={fav.image} />
-          ))}
+          <CardFavorite title="F1" image={require('../assets/image.png')} />
+          <CardFavorite title="F2" image={require('../assets/image.png')} />
+          <CardFavorite title="F3" image={require('../assets/image.png')} />
+          <CardFavorite title="F4" image={require('../assets/image.png')} />
+          <CardFavorite title="F5" image={require('../assets/image.png')} />
+          <CardFavorite title="F6" image={require('../assets/image.png')} />
         </View>
 
         {/* Destaques */}
         <Text style={styles.sectionTitle}>Destaques</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {destaques.map((item) => (
-            <CardHighlight key={item.id} title={item.texto} image={item.imagem} />
-          ))}
+          <CardHighlight title="Texto 1" image={require('../assets/image.png')} />
+          <CardHighlight title="Texto 2" image={require('../assets/image.png')} />
+          <CardHighlight title="Texto 3" image={require('../assets/image.png')} />
+          <CardHighlight title="Texto 4" image={require('../assets/image.png')} />
         </ScrollView>
 
         {/* Atalhos */}
         <Text style={styles.sectionTitle}>Atalhos</Text>
         <View style={styles.iconBlock}>
           <View style={styles.iconBlockGrid}>
-            {atalhos.map((item, idx) => (
-              <View key={idx} style={styles.iconCard}>
-                <Text style={styles.iconText}>{item.icon}</Text>
-                <Text style={styles.iconLabel}>{item.label}</Text>
-              </View>
-            ))}
+            <View style={styles.iconCard}>
+              <Text style={styles.iconText}>⚡</Text>
+              <Text style={styles.iconLabel}>Ação 1</Text>
+            </View>
+            <View style={styles.iconCard}>
+              <Text style={styles.iconText}>📥</Text>
+              <Text style={styles.iconLabel}>Ação 2</Text>
+            </View>
+            <View style={styles.iconCard}>
+              <Text style={styles.iconText}>🔒</Text>
+              <Text style={styles.iconLabel}>Ação 3</Text>
+            </View>
+            <View style={styles.iconCard}>
+              <Text style={styles.iconText}>💬</Text>
+              <Text style={styles.iconLabel}>Ação 4</Text>
+            </View>
           </View>
         </View>
 
         {/* Notícias Recentes */}
         <Text style={styles.sectionTitle}>Notícias Recentes</Text>
-        {[
-          { title: 'Nova Receita Publicada', time: '2h atrás', image: require('../assets/image.png') },
-          { title: 'Dicas de Culinária', time: '1 dia atrás', image: require('../assets/image.png') },
-          { title: 'Atualização de App', time: '3 dias atrás', image: require('../assets/image.png') },
-        ].map((item, idx) => (
-          <CardNews key={idx} title={item.title} subtitle={item.time} image={item.image} />
-        ))}
+        <CardNews title="Nova Receita Publicada" subtitle="2h atrás" image={require('../assets/image.png')} />
+        <CardNews title="Dicas de Culinária" subtitle="1 dia atrás" image={require('../assets/image.png')} />
+        <CardNews title="Atualização de App" subtitle="3 dias atrás" image={require('../assets/image.png')} />
 
         {/* Categorias */}
         <Text style={styles.sectionTitle}>Categorias</Text>
         <View style={styles.grid}>
-          {['Doces', 'Salgados', 'Bebidas', 'Snacks'].map((cat, idx) => (
-            <CardCategory key={idx} title={cat} image={require('../assets/image.png')} />
-          ))}
+          <CardCategory title="Doces" image={require('../assets/image.png')} />
+          <CardCategory title="Salgados" image={require('../assets/image.png')} />
+          <CardCategory title="Bebidas" image={require('../assets/image.png')} />
+          <CardCategory title="Snacks" image={require('../assets/image.png')} />
         </View>
 
         {/* Arquivos Salvos */}
         <Text style={styles.sectionTitle}>Arquivos Salvos</Text>
-        {[1, 2, 3].map((i) => (
-          <CardDownload key={i} />
-        ))}
+        <CardDownload />
+        <CardDownload />
+        <CardDownload />
 
         {/* Recomendações */}
         <Text style={styles.sectionTitle}>Recomendações</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <CardRecommendation key={i} title={`Destaque ${i}`} image={require('../assets/image.png')} />
-          ))}
+          <CardRecommendation title="Destaque 1" image={require('../assets/image.png')} />
+          <CardRecommendation title="Destaque 2" image={require('../assets/image.png')} />
+          <CardRecommendation title="Destaque 3" image={require('../assets/image.png')} />
         </ScrollView>
 
         {/* Filtros */}
         <Text style={styles.sectionTitle}>Filtros</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {['Rápido', 'Vegano', 'Low Carb', 'Docinho', 'Mamão'].map((label, idx) => (
-            <CardFilter key={idx} label={label} />
-          ))}
+          <CardFilter label="Rápido" />
+          <CardFilter label="Vegano" />
+          <CardFilter label="Low Carb" />
+          <CardFilter label="Docinho" />
+          <CardFilter label="Mamão" />
         </ScrollView>
 
       </ScrollView>
@@ -142,7 +125,6 @@ const styles = StyleSheet.create({
   favGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 16,
     justifyContent: 'space-between',
   },
   iconBlock: {
@@ -158,7 +140,8 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   iconCard: {
-    width: '22%',
+    width: '23%',
+    marginBottom: 16,
     aspectRatio: 1,
     backgroundColor: '#fff',
     borderRadius: 12,

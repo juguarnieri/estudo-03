@@ -51,21 +51,76 @@ export default function ProfileScreen() {
           <CardHighlight title="Texto 4" image={require('../assets/image.png')} />
         </ScrollView>
 
-        {/* Atalhos */}
-        <Text style={styles.sectionTitle}>Atalhos</Text>
-        <View style={styles.iconBlock}>
-          <View style={styles.iconBlockGrid}>
-            <View style={styles.iconCard}>
-              <Text style={styles.iconText}>⚡</Text>
-              <Text style={styles.iconLabel}>Ação 1</Text>
-            </View>
-            <View style={styles.iconCard}>
-              <Text style={styles.iconText}>📥</Text>
-              <Text style={styles.iconLabel}>Ação 2</Text>
-            </View>
-            {/* ... Adicione mais cards de ícones conforme necessário */}
-          </View>
-        </View>
+{/* Atalhos */}
+<Text style={styles.sectionTitle}>Atalhos</Text>
+<View style={styles.iconBlock}>
+  <View style={styles.iconBlockGrid}>
+    <View style={styles.iconCard}>
+      <Text style={styles.iconText}>⚡</Text>
+      <Text style={styles.iconLabel}>Ação 1</Text>
+    </View>
+    <View style={styles.iconCard}>
+      <Text style={styles.iconText}>📥</Text>
+      <Text style={styles.iconLabel}>Ação 2</Text>
+    </View>
+    <View style={styles.iconCard}>
+      <Text style={styles.iconText}>🔍</Text>
+      <Text style={styles.iconLabel}>Buscar</Text>
+    </View>
+    <View style={styles.iconCard}>
+      <Text style={styles.iconText}>📝</Text>
+      <Text style={styles.iconLabel}>Notas</Text>
+    </View>
+    <View style={styles.iconCard}>
+      <Text style={styles.iconText}>❤️</Text>
+      <Text style={styles.iconLabel}>Favoritos</Text>
+    </View>
+    <View style={styles.iconCard}>
+      <Text style={styles.iconText}>⚙️</Text>
+      <Text style={styles.iconLabel}>Config</Text>
+    </View>
+    <View style={styles.iconCard}>
+  <Text style={styles.iconText}>🔒</Text>
+  <Text style={styles.iconLabel}>Privado</Text>
+</View>
+<View style={styles.iconCard}>
+  <Text style={styles.iconText}>💬</Text>
+  <Text style={styles.iconLabel}>Mensagens</Text>
+</View>
+<View style={styles.iconCard}>
+  <Text style={styles.iconText}>🛠️</Text>
+  <Text style={styles.iconLabel}>Ferramentas</Text>
+</View>
+<View style={styles.iconCard}>
+  <Text style={styles.iconText}>📊</Text>
+  <Text style={styles.iconLabel}>Estatísticas</Text>
+</View>
+<View style={styles.iconCard}>
+  <Text style={styles.iconText}>🎯</Text>
+  <Text style={styles.iconLabel}>Metas</Text>
+</View>
+<View style={styles.iconCard}>
+  <Text style={styles.iconText}>📍</Text>
+  <Text style={styles.iconLabel}>Localizar</Text>
+</View>
+<View style={styles.iconCard}>
+  <Text style={styles.iconText}>📁</Text>
+  <Text style={styles.iconLabel}>Arquivos</Text>
+</View>
+<View style={styles.iconCard}>
+  <Text style={styles.iconText}>🔔</Text>
+  <Text style={styles.iconLabel}>Alertas</Text>
+</View>
+<View style={styles.iconCard}>
+  <Text style={styles.iconText}>💡</Text>
+  <Text style={styles.iconLabel}>Dicas</Text>
+</View>
+<View style={styles.iconCard}>
+  <Text style={styles.iconText}>💡</Text>
+  <Text style={styles.iconLabel}>Dicas</Text>
+</View>
+  </View>
+</View>
 
         {/* Notícias Recentes */}
         <Text style={styles.sectionTitle}>Notícias Recentes</Text>
@@ -137,11 +192,11 @@ const styles = StyleSheet.create({
   },
 
   favGrid: {
-    flexDirection: 'row',  // Alinha os cards em linha
-    flexWrap: 'wrap',      // Permite que os cards que não couberem em uma linha "quebrem" para a linha seguinte
-    justifyContent: 'space-between', // Ajusta o espaçamento entre os cards
-    gap: 6,               // Espaço entre os cards
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
   },
+
   iconBlock: {
     backgroundColor: '#cce4ff',
     borderRadius: 16,
@@ -152,16 +207,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    gap: 16, // Ajuste na distância entre os cards de ícones
   },
   iconCard: {
-    width: '22%', // Diminuí a largura para aumentar a compactação
+    width: '23%', // 4 colunas por linha com espaço entre elas
     aspectRatio: 1,
     backgroundColor: '#fff',
     borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 10,
+    marginBottom: 16, // espaço vertical entre os cards
     shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: 2 },
@@ -180,7 +235,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    gap: 12,
   },
 });
-
